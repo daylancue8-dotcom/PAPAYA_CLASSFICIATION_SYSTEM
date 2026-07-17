@@ -1,0 +1,45 @@
+name: papaya_ripeness
+description: Real-time Papaya Ripeness Detection System using CNN + TFLite
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # TFLite for on-device inference
+  tflite_flutter: ^0.12.1
+
+  # Camera for live detection
+  camera: ^0.10.5+9
+
+  # Image processing
+  image: ^4.1.7
+
+  # Image picker used by the app (was incorrectly under dev_dependencies)
+  image_picker: ^1.0.4
+
+  # UI
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  # Add your TFLite model and labels here
+  assets:
+    - assets/labels.txt
+    - assets/papaya_model.tflite
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png" # Your high-res 1024x1024 image
